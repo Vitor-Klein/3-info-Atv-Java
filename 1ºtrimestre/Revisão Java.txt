@@ -1,0 +1,213 @@
+Vitor Klein
+nª26
+3ªinfo A
+
+-Base:
+    PessoaFisica.java:
+package base;
+
+public class PessoaFisica {
+	public int ID, CPF;
+    public String descrição; 
+
+}
+
+
+    PessoaJuridica.java:
+package base;
+
+public class PessoaJuridica {
+	public int ID, CNPJ;
+    public String descrição; 
+
+}
+
+
+    Funcionario.java:
+package base;  
+
+public class Funcionario {
+       public int ID, CPF, telefone, salario;
+   public String nome, descricao, endereco;
+
+} 
+
+    TocaFitas.java:
+
+public class tocafita {
+	public String codig;
+	public String cantorr;
+	public String musica;
+	public boolean ligado;
+	public boolean tocando;
+
+}
+
+
+-Executar:
+     execucao.java:
+package executar;
+
+import base.PessoaFisica;
+import base.PessoaJuridica;
+import base.Tocafitas;
+import base.Funcionario;
+
+public class execucao {
+    
+	public static void main(String[] args) {
+	        
+		Funcionario pg = new Funcionario();
+		Funcionario pd = new Funcionario();
+	        Funcionario sec = new Funcionario();
+		Funcionario gerente = new Funcionario();
+                Tocafita tocando = new Tocafita();
+			tocando.ligado = true;
+	    tocando.tocando = false;
+	if ( tocando.ligado == true && tocando.tocando == true ) {
+		System.out.println("Online");
+		
+		tocando.codig = "Este código";
+		tocando.cantor = "Supercombo";
+		tocando.musica ="Bonsai";
+
+		System.out.println("\nCODIGO:"+ tocando.codig + "\nnome do cantor:" + tocando.cantor + "\nnome da musica:" + tocando.musica
+				+ "\nta tocando?");
+	
+	} else if(tocando.tocando == false && tocando.ligado == true) {
+		System.out.println("Ligado porém não toca");
+	
+	}else if(tocando.ligado == false){
+		System.out.println("Desligado e não está tocando");
+	}
+
+                PessoaJuridica PJ1 = new PessoaJuridica(); 
+                PessoaJuridica PJ2 = new PessoaJuridica(); 
+                PessoaJuridica PJ3 = new PessoaJuridica();
+ 
+                PessoaFisica PF1 = new PessoaFisica();
+                PessoaFisica PF2 = new PessoaFisica();
+                PessoaFisica PF3 = new PessoaFisica();
+		
+    pg.nome = "Vitor";
+		pg.cargo = "engenheiro";
+		pg.CPF = 24545;
+		pg.descrição = "Contratado em 2014";
+		pg.endereço = "Rua Amazonas 24545345";
+		pg.ID = 25345452345345;
+		pg.salário = 90435340;
+		pg.telefone = 3264945345844;
+		
+		System.out.println("Nome: "+pg.nome);
+		System.out.println("Cargo: "+pg.cargo);
+		System.out.println("CPF: "+pg.CPF);
+		System.out.println("Descrição: "+pg.descrição);
+		System.out.println("Endereço: "+pg.endereço);
+		System.out.println("ID: "+pg.ID);
+		System.out.println("Salário: "+pg.salário);
+		System.out.println("Telefone: "+pg.telefone);
+		
+		pd.nome = "Maria";
+		pd.cargo = "diretor";
+		pd.CNPJ = 23434123;
+		pd.descrição = "Contratado em 2014";
+		pd.endereço = "Rua São Paulo 3241234";
+		pd.ID = 2914234837;
+		pd.salário = 10342300;
+		pd.telefone = 3263423445656;
+		
+		System.out.println("Nome: "+pd.nome);
+		System.out.println("Cargo: "+pd.cargo);
+		System.out.println("CNPJ: "+pd.CNPJ);
+		System.out.println("Descrição: "+pd.descrição);
+		System.out.println("Endereço: "+pd.endereço);
+		System.out.println("ID: "+pd.ID);
+		System.out.println("Salário: "+pd.salário);
+		System.out.println("Telefone: "+pd.telefone);
+		
+		sec.nome = "jusefa";
+		sec.cargo = "Secretária";
+		sec.CPF = 228435234573;
+		sec.descrição = "Contratada em 2034";
+		sec.endereço = "Rua Argentina 454352345";
+		sec.ID = 23453453425;
+		sec.salário = 85453400;
+		sec.telefone = 3264645756548787;
+		
+		System.out.println("Nome: "+sec.nome);
+		System.out.println("Cargo: "+sec.cargo);
+		System.out.println("CPF: "+sec.CPF);
+		System.out.println("Descrição: "+sec.descrição);
+		System.out.println("Endereço: "+sec.endereço);
+		System.out.println("ID: "+sec.ID);
+		System.out.println("Salário: "+sec.salário);
+		System.out.println("Telefone "+sec.telefone);
+		
+		gerente.nome = "adalberto";
+		gerente.cargo = "gerente";
+		gerente.CNPJ = 657werqerwe38;
+		gerente.descrição = "Contratado em 2016";
+		gerente.endereço = "Rua Rio de Janeiro 7we854";
+		gerente.ID = 24545;
+		gerente.salário = 387000;
+		gerente.telefone = 3264578673525;
+
+                PJ1.ID = 147;
+                PJ1.descricao = "Contratado em Janeiro";
+                PJ1.CNPJ = 123456;
+		
+                PJ2.ID = 258;
+                PJ2.descricao = "Contratado em Março";
+                PJ2.CNPJ = 5465;
+                
+                PJ3.ID = 369;
+                PJ3.descricao = "Contratado em Junho";
+                PJ3.CNPJ = 1259;
+
+                PF1.ID = 741;
+                PF1.descricao = "Contratado em Dezembro";
+                PF1.CPF = 7532;
+
+                PF2.ID = 759;
+                PF2.descricao = "Contratado em Abril";
+                PF2.CPF = 9462;
+
+                PF3.ID = 153;
+                PF3.descricao = "Contratado em Novembro";
+                PF3.CPF = 5413;
+	        
+                System.out.println("ID da Pessoa Jurídica 1: "+PJ1.ID);
+                System.out.println("Descrição da Pessoa Jurídica 1: "+PJ1.descricao);
+                System.out.println("CPNPJ da Pessoa Jurídica 1: "+PJ1.CNPJ);
+
+                System.out.println("ID da Pessoa Jurídica 2: "+PJ2.ID);
+                System.out.println("Descrição da Pessoa Jurídica 2: "+PJ2.descricao);
+                System.out.println("CPNPJ da Pessoa Jurídica 2: "+PJ2.CNPJ);
+                
+                System.out.println("ID da Pessoa Jurídica 3: "+PJ3.ID);
+                System.out.println("Descrição da Pessoa Jurídica 3: "+PJ3.descricao);
+                System.out.println("CPNPJ da Pessoa Jurídica 3: "+PJ3.CNPJ);
+
+                System.out.println("ID da Pessoa Física 1: "+PF1.ID);
+                System.out.println("Descrição da Pessoa Física 1: "+FJ1.descricao);
+                System.out.println("CPF da Pessoa Física 1: "+PF1.CNPJ);
+
+                System.out.println("ID da Pessoa Física 2: "+PF2.ID);
+                System.out.println("Descrição da Pessoa Física 2: "+PF2.descricao);
+                System.out.println("CPF da Pessoa Física 2: "+PF2.CPF);
+
+                System.out.println("ID da Pessoa Física 3: "+PF3.ID);
+                System.out.println("Descrição da Pessoa Física 3: "+PF3.descricao);
+                System.out.println("CPF da Pessoa Física 3: "+PF3.CPF);
+
+                System.out.println("Nome: "+gerente.nome);
+		System.out.println("Cargo: "+gerente.cargo);
+		System.out.println("CNPJ: "+gerente.CNPJ);
+		System.out.println("Descrição: "+gerente.descrição);
+		System.out.println("Endereço: "+gerente.endereço);
+	    System.out.println("ID: "+gerente.ID);
+	    System.out.println("Salário: "+gerente.salário);
+	    System.out.println("Telefone: "+gerente.telefone); 
+	
+}
+}
