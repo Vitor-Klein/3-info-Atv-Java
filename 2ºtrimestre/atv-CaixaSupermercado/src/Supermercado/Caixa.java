@@ -2,19 +2,40 @@ package Supermercado;
 
 public class Caixa {
 
-	private int numeroCaixa;
-	private double abreCaixa, valorTotal; 
+	private double numeroCaixa;
+	private double abreCaixa, valorTotal, FechaCaixa; 
 	
-	public void abreCaixa(double valor) {
-		//valor de abertura que vcs vao passar
+	public Caixa(double numeroCaixa, double abreCaixa,  double valorTotal) {
+		super();
+		this.numeroCaixa = numeroCaixa;
+		this.abreCaixa = abreCaixa;
+		
+		this.valorTotal = valorTotal;
 	}
-	public void registraMovimento (double valor) {
-		this.valorTotal += valor;
+	public double getNumeroCaixa() {
+		return numeroCaixa;
 	}
-	
-	public double FechaCaixa() {
-		//codigo para verificar o valor total recebido do caixa
-		return 0.0;
+	public void setNumeroCaixa(double numeroCaixa) {
+		this.numeroCaixa = numeroCaixa;
+	}
+	public double getAbreCaixa() {
+		return abreCaixa;
+	}
+	public void setAbreCaixa(double abreCaixa) {
+		this.abreCaixa = abreCaixa;
+	}
+	public double getValorTotal() {
+		return valorTotal;
+	}
+	public void setValorTotal(double valorTotal) {
+		this.valorTotal = valorTotal;
+	}
+
+  public double getFechaCaixa() {
+		return FechaCaixa;
+	}
+	public void setFechaCaixa(double FechaCaixa) {
+		this.FechaCaixa = FechaCaixa;
 	}
 	
 }
