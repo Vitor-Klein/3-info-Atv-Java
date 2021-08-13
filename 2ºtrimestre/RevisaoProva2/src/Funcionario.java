@@ -7,7 +7,7 @@ abstract class Funcionario {
   private int descontos;
   private String endereço;
 
-  public abstract double CalcularSalario();
+  public abstract int CalcularSalario();
 
 
   public Funcionario(int codigo,String Nome,String Cargo,int salarioBase,int salarioLiquido,int descontos,String endereço){
