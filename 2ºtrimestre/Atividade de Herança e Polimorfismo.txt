@@ -1,0 +1,186 @@
+Vitor Klein
+nº26
+3º INFO A
+
+1)--------------------------------------------------------------------------------------------------------------------------------------
+
+package herança1;
+
+import java.io.PrintStream;
+
+public class Ingresso {
+   public float IgressoValor;
+   
+   public float getIgressoValor(){
+   return this.IgressoValor;
+   }
+   public void setIgressoValor(float IgressoValor){
+   this.IgressoValor = igressoValor;
+   }
+    public void imprimeValor(float valor){
+    valor = this.igressoValor;
+       System.out.printf("Valor do Igresso:"+ valor);
+    }
+}
+package herança1;
+
+public class VIP extends Ingresso {
+    public float ValorAdicional;
+   
+    public float getValorAdicional(){
+    return this.ValorAdicional;
+    }
+    public void setValorAdicional(float valorAdicional){
+        this.ValorAdicional = valorAdicional;
+    }
+    public float IgressoValorVip(float IgressoValor){
+         this.IgressoValor = IgressoValor;
+        return this.IgressoValor + (this.ValorAdicional* this.IgressoValor);       
+    }
+}
+package herança1;
+
+public class Normal extends Ingresso{
+   
+    public void imprimeingressoNormal(float valor){
+        valor = this.IgressoValor;
+        System.out.println("Ingresso Normal:"+ valor );
+       
+    }
+}
+package herança1;
+
+public class CamaroteInferior extends VIP{
+      String LocalIngresso;
+     
+    public String getLocalIngresso(){
+      return this.LocalIngresso;
+    }
+    public void setLocalIngresso(String local){
+        this.LocalIngresso = local;
+    }
+   
+    public String acessaLocalizacao(){
+        return this.LocalIngresso;
+    }
+    public void imprimeLocalizacao(String local){
+        local = this.LocalIngresso;
+        System.out.println("Local:"+ local);
+    }
+}
+package herança1;
+
+public class CamaroteSuperior extends VIP{
+    float TaxaAdicional;
+   
+    public void setTaxaAdicional(float valor){
+        this.TaxaAdicional = valor;
+    }
+    public float getTaxaAdicional(){
+        return this.TaxaAdicional;
+    }  
+    public float IgressoValorAdd(float valor){
+        valor= this.ValorAdicional;
+        float valorAdd =(this.TaxaAdicional*this.IgressoValor)*2+this.IgressoValor;
+    return valorAdd;
+    }
+}   
+package herança1;
+
+public class Herança1 {
+
+    public static void main(String[] args) {
+        Ingresso ingresso = new Ingresso();
+        Normal normal = new Normal();
+        CamaroteInferior camaroteinferior = new CamaroteInferior();
+        CamaroteSuperior camarotesuperior = new CamaroteSuperior();
+        VIP vip = new VIP();
+
+        ingresso.setIgressoValor(71);
+        vip.setValorAdicional(0.7f);
+        camaroteinferior.setLocalIngresso("terreo");
+        camarotesuperior.setTaxaAdicional(0.5f);
+        normal.setIgressoValor(70);
+        normal.imprimeingressoNormal(normal.getIgressoValor());
+        System.out.println("Ingresso Vip:"+vip.IgressoValorVip(ingresso.getIgressoValor()));
+        System.out.println("Ingresso Vip Camarote Inferior:"+vip.IgressoValorVip(ingresso.getIgressoValor()));
+        camaroteinferior.imprimeLocalizacao(camaroteinferior.getLocalIngresso());
+        camarotesuperior.setValorAdicional(35);
+        camarotesuperior.setIgressoValor(70);
+        System.out.println("Ingresso Vip Camarote Superior:"+ camarotesuperior.IgressoValorAdd(vip.getValorAdicional()));
+    }
+   
+}
+
+2)--------------------------------------------------------------------------------------------------------------------------------------
+
+package heranca2;
+public class Imovel {
+    float preco;
+    String endereco;
+   
+    public void getPreco(float preco){
+    this.preco = preco;
+    }
+    public float setPreco(){
+    return this.preco;
+    }
+}
+package heranca2;
+
+public class Novo extends Imovel{
+    public float addPreco;
+    
+    public float setAddPreco(){
+        return this.addPreco;
+    }
+    public void getAddPreco(float preco){
+        this.addPreco = preco;  
+    }
+    public void impremeAddPreco(float preco){
+        this.addPreco = preco *this.preco;
+        System.out.println("valor: "+ (this.addPreco+this.preco));
+    }
+}
+package heranca2;
+
+public class Velho extends Imovel {
+    public float desPreco;
+    
+    public void getDesPreco(float preco){
+        this.desPreco = preco;
+    }
+    public float setDesPreco(){
+        return this.desPreco;
+    }
+    public void DescPreco(float preco){
+        this.desPreco = preco *this.preco;
+        System.out.println("Valor:"+ (this.desPreco+this.preco));
+    }
+}
+package heranca2;
+import java.util.Scanner;
+public class Heranca2 {
+
+    public static void main(String[] args) {
+    Scanner entrada = new Scanner(System.in);
+    Imovel imovel = new Imovel();
+    Novo imovelNovo = new ImovelNovo();
+    Velho imovelVelho = new ImovelVelho();
+        System.out.println("digite 1 para imovel Novo e 2 para imovel Velho");
+        int ia;
+        ia = entrada.nextInt();
+        switch(ia){
+            case 1:
+                imovelNovo.getAddPreco(0.5f);
+                imovelNovo.getPreco(125000f);
+                imovelNovo.impremeAddPreco(imovelNovo.setAddPreco());
+                break;
+            case 2:
+                imovelVelho.getDesPreco(0.5f);
+                imovelVelho.getPreco(125000f);
+                imovelVelho.DescPreco(imovelVelho.setDesPreco());
+        }
+    }
+    
+}
