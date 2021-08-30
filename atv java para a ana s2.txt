@@ -1,0 +1,104 @@
+
+Ana Carolina
+nº2
+3ºinfo A
+
+
+------------------------Caixa-----------------------
+package Supermercado;
+
+public class Caixa {
+	private double numeroCaixa;
+	private double abreCaixa, valorTotal, FechaCaixa;
+
+	public Caixa(double numeroCaixa, double abreCaixa, double valorTotal) {
+		super();
+		this.numeroCaixa = numeroCaixa;
+		this.abreCaixa = abreCaixa;
+		this.valorTotal = 0;
+	}
+
+	public double getNumeroCaixa() {
+		return numeroCaixa;
+	}
+
+	public void setNumeroCaixa(double numeroCaixa) {
+		this.numeroCaixa = numeroCaixa;
+	}
+
+	public double getAbreCaixa() {
+		return abreCaixa;
+	}
+
+	public void setAbreCaixa(double abreCaixa) {
+		this.abreCaixa = abreCaixa;
+	}
+
+	public double getValorTotal() {
+		return valorTotal;
+	}
+
+	public void setValorTotal(double valorTotal) {
+		this.valorTotal = valorTotal;
+	}
+
+	public double getFechaCaixa() {
+		return FechaCaixa;
+	}
+
+	public void setFechaCaixa(double FechaCaixa) {
+		this.FechaCaixa = FechaCaixa;
+	}
+
+	public void movimentaCaixa(double movimento) {
+		this.valorTotal += movimento;
+	}
+
+}
+
+--------------Supermercado-------------------------------
+
+package Supermercado;
+
+public class Supermercado {
+  int contador;
+  private Caixa[] caixa = new Caixa[10];
+
+  public void adicionaCaixa(Caixa c) {
+
+    if (this.contador < this.caixa.length) {
+      caixa[this.contador] = c;
+      System.out.println("Caixa inserido na posição: " + this.contador);
+      this.contador++;
+    }
+  }
+}
+
+
+-------------------Teste-------------------------------
+
+package Supermercado;
+
+public class TesteSupermercado {
+	public static void main(String[] args) {
+	Caixa e1 = new Caixa(756764, 6, 0);
+	Supermercado c1 = new Supermercado();
+	Supermercado c2 = new Supermercado();
+
+	c1.adicionaCaixa(e1);
+	e1.movimentaCaixa(20);
+	e1.movimentaCaixa(2.6);
+	e1.movimentaCaixa(5);
+	e1.movimentaCaixa(53.70);
+	System.out.println(e1.getValorTotal());
+
+	Caixa e2 = new Caixa(4556456, 6, 0);
+	c2.adicionaCaixa(e2);
+	e2.movimentaCaixa(3.4);
+	e2.movimentaCaixa(5.2);
+	e2.movimentaCaixa(4.2);
+	e2.movimentaCaixa(50);
+	System.out.println(e2.getValorTotal());
+
+	}
+}

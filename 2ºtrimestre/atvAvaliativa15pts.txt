@@ -1,0 +1,165 @@
+Vitor Klein
+nº26
+3ºinfo A
+
+
+--------------------Atividade Avaliativa Java----------------------
+
+
+package base;
+
+public class Pessoa{
+	public Pessoa (String nome, String endereço) {
+	super(nome, endereço);
+
+	}
+
+	public String getnome() {
+		return nome;
+	}
+
+
+	public void setnome(String nome) {
+		this.nome = nome;
+	}
+
+
+	public String getendereço() {
+		return endereço;
+	}
+
+
+	public void setendereço(String endereço) {
+		this.endereço = endereço;
+	}
+	
+
+}
+package base;
+
+public class Tripulacao extends Pessoa{
+
+	protected int idtripulacao;
+	
+	
+	public Tripulacao(String nome, String endereço, int idtripulacao) {
+		super(nome, endereço, idtripulacao);
+
+	}
+
+	public string getidtripulacao() {
+		return idtripulacao;
+	}
+
+
+	public void setidtripulacao(String idtripulacao) {
+		this.idtripulacao =idtripulacao;
+	}
+
+
+	public String getnome() {
+		return nome;
+	}
+
+
+	public void setnome(String nome) {
+		this.nome = nome;
+	}
+
+
+	public String getendereço() {
+		return endereço;
+	}
+
+
+	public void setendereço(String endereço) {
+		this.endereço = endereço;
+	}
+	
+
+
+}
+package base;
+
+public class Passageiro extends Pessoa{
+
+	protected int númeroSmiles;
+	
+	
+	public Tripulação(String nome, String endereço, int númeroSmiles) {
+		super(nome, endereço, númeroSmiles);
+
+	}
+
+	public string getnúmeroSmiles() {
+		return númeroSmiles;
+	}
+
+
+	public void setnúmeroSmiles(String númeroSmiles) {
+		this.númeroSmiles =númeroSmiles;
+	}
+
+
+	public String getnome() {
+		return nome;
+	}
+
+
+	public void setnome(String nome) {
+		this.nome = nome;
+	}
+
+
+	public String getendereço() {
+		return endereço;
+	}
+
+
+	public void setendereço(String endereço) {
+		this.endereço = endereço;
+	}
+
+
+}
+package base;
+
+public class Agente extends Pessoa{
+
+	protected int idagente;
+	
+	
+	public Tripulação(String nome, String endereço, int idagente) {
+		super(nome, endereço, idagente);
+
+	}
+
+	public string getidagente() {
+		return idagentes;
+	}
+
+
+	public void setidagente(String idagente) {
+		this.idagentes =idagente;
+	}
+
+
+	public String getnome() {
+		return nome;
+	}
+
+
+	public void setnome(String nome) {
+		this.nome = nome;
+	}
+
+
+	public String getendereço() {
+		return endereço;
+	}
+
+
+	public void setendereço(String endereço) {
+		this.endereço = endereço;
+	}
+}

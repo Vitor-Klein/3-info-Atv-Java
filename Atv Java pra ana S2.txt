@@ -1,0 +1,113 @@
+
+Prova de Linguagens de Programação Java
+
+-----------------------classe Professor----------------------------
+package faculdade;
+
+public class Professor{
+    String nome, matricula;
+    int idade;
+    double salario;
+
+    public Professor(String nome, String matricula, int idade, double salario) {
+        super();
+        this.nome = nome;
+        this.matricula = matricula;
+        this.idade = idade;
+        this.salario = salario;
+
+    }
+
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public void setIdade(int idade) {
+        this.idade = idade;
+    }
+
+    public double getSalario() {
+        return salario;
+    }
+}
+
+-----------------------classe Professor40Horas----------------------------
+
+package faculdade;
+
+public class Professor40Horas extends Professor{
+    public Professor40Horas(String nome, String matricula, int idade, double salario) {
+        super(nome, matricula, idade, salario);
+    }
+
+    public void setSalario(double salario) {
+        this.salario = salario;
+    }
+
+}
+
+
+-----------------------classe Professorpohora----------------------------
+
+package faculdade;
+
+public class Professorporhora extends Professor{
+    private int horas;
+
+    public Professorporhora(String nome, String matricula, int idade, double salario, int horas) {
+        super(nome, matricula, idade, salario);
+        this.horas = horas;
+    }
+
+    public int getHoras() {
+        return horas;
+    }
+
+    public void setHoras(int horas) {
+        this.horas = horas;
+    }
+
+    public void setSalario(double salario) {
+        this.salario = salario * horas;
+    }
+
+}
+
+-----------------------classe Principal----------------------------
+
+package faculdade;
+
+public class Principal {
+  public static void main(String[] args) {
+    Professor40horas Professor40horas = new Professor40horas("Jubiscreuso", "3 A", 39, 1400.00);
+    Professorporhora Professorporhora = new Professorporhora("Burrodosherek", "3 B", 25, 5.4, 30);
+    System.out.println(" Cadastro Professor Regime  ");
+    System.out.println("\nNome :" + Professor40horas.getNome() + "\nMatricula: " + Professor40horas.getMatricula()
+        + "\nIdade : " + Professor40horas.getIdade() + "\nSalario: " + Professor40horas.getSalario());
+
+    Professorporhora.setSalario(Professorporhora.getSalario());
+
+    System.out.println(" Cadastro Professor Horas ");
+    System.out.println("\nNome :" + Professorporhora.getNome() + "\nMatricula: " + Professorporhora.getMatricula()
+        + "\nIdade : " + Professorporhora.getIdade() + "\nSalario: " + Professorporhora.getSalario()
+        + "\nHoras Trabalhadas :" + Professorporhora.getHoras());
+  }
+}
+

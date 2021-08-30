@@ -1,0 +1,244 @@
+Vitor Klein
+nº26
+3ºinfo A
+
+Prova2 Java
+
+---------------------Agenda---------------------------------
+package appagenda;
+
+import java.util.ArrayList;
+
+public class Agenda {
+  private ArrayList<ContatoBasico> contatos;
+
+  Agenda() {
+    contatos = new ArrayList();
+  }
+
+  public void inserir(ContatoBasico w) {
+    contatos.add(w);
+  }
+
+  public ContatoBasicobuscar(String nome) {
+    for (int i = 0; i < contatos.size(); i++) {
+      ContatoBasico w = contatos.get(i);
+      if (w.getNome().equalsIgnoreCase(nome))
+        return contatos.get(i);
+    }
+    return null;
+  }
+
+  public ContatoBasicobuscar(int pos)
+    {   if(pos>=0 &&pos<contatos.size())
+        {   returncontatos.get(pos);
+        }
+        return null;
+    }
+
+  public EContatobuscarEmail(String email)
+    {   for(int i=0;i<contatos.size();i++)
+        {   if(contatos.get(i) instanceofEContato)
+            {
+              EContato w=(EContato)contatos.get(i);
+              if(w.getEmail().equalsIgnoreCase(email))
+              return (EContato)contatos.get(i);
+            }
+        }
+        return null;
+    }
+
+  public Contato[]
+
+  buscarGeral(String palavraChave)
+    {   ArrayList<ContatoBasico>todos=new ArrayList();
+         for(int i=0;i<contatos.size();i++)
+          {   ContatoBasico w=contatos.get(i);
+               if(w.getDados().contains(palavraChave))
+                 todos.add(w);
+           }
+           Contato[] vet=new Contato[todos.size()];
+
+            return (todos.toArray(vet));
+     }
+
+  public Contato[]
+
+  buscarTodos()
+    {   Contato[] vet=new Contato[contatos.size()];
+
+         return (contatos.toArray(vet));
+    }
+
+  public intgetQuantidade() {
+    returncontatos.size();
+  }
+}
+--------------------------Contato-----------------------------
+package appagenda;
+
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
+public class Contato extends ContatoBasico {
+  protected Calendar dataNacimento;
+
+  publicContato(String nome, Calendar dataNacimento)
+    {   super(nome);
+         this.dataNacimento = dataNacimento;
+    }
+
+  @Override
+     public String getDados()
+     { return super.getDados()+"Nascido em "+
+        dataNacimento.get(Calendar.DATE)+"/"+
+        dataNacimento.get(Calendar.MONTH) + "/"+
+        dataNacimento.get(Calendar.YEAR) + "Idade: ";
+    }
+
+  public intgetIdade()
+    {   Calendar hoje=new GregorianCalendar();
+          intidade = hoje.get(Calendar.YEAR)-dataNacimento.get(Calendar.YEAR);
+          hoje.set(Calendar.YEAR, dataNacimento.get(Calendar.YEAR));
+          if(hoje.before(dataNacimento))
+            idade--;
+            return idade;
+
+    }
+}
+--------------------ContatoBasico-------------------------------
+package appagenda;
+
+import java.util.ArrayList;
+
+abstract public class ContatoBasico {
+  protected String nome;
+  protected ArrayList<Telefone>telefones;
+
+  public ContatoBasico() {
+    nome = "";
+    telefones = new ArrayList();
+  }
+
+  public ContatoBasico(String nome) {
+    this.nome = nome;
+    telefones = new ArrayList();
+  }
+
+  public String getNome() {
+    return nome;
+  }
+
+  public void setNome(String nome) {
+    this.nome = nome;
+  }
+
+  public void setTelefone(Telefonetf)
+    {  telefones.add(tf);
+    }
+
+  public String getDados() {
+    String s = nome + "\n";
+    for (Telefone t : telefones) {
+      s += t.getTelefone() + "\n";
+    }
+    return s;
+  }
+}
+---------------------ContatoComercial--------------------------
+package appagenda;
+
+public class ContatoComercial extends ContatoBasico {
+  protected String atividade;
+  protected String funcionario;
+
+  publicContatoComercial(String nome, String atividade, String funcionario)
+  {   super(nome);
+       this.atividade=atividade;
+       this.funcionario=funcionario;
+  }
+
+  @Override
+  public String getDados() {
+    String dados = super.getDados();
+    dados += atividade + " contato Sr(a): " + funcionario;
+    return dados;
+  }
+}
+---------------------EComercial---------------------------------
+package appagenda;
+
+import java.util.Calendar;
+
+public class EContato extends Contato {
+  protected String email, homepage;
+
+  public EContato(String nome, Calendar dataNacimento, String email, String HomePage) {
+    super(nome, dataNacimento);
+    this.email = email;
+    homepage = HomePage;
+  }
+
+  @Override
+  public String getDados() {
+    return super.getDados() + "email: " + email + "homepage:" + homepage + "Idade: ";
+  }
+  public String getEmail() {
+    return email;
+  }
+  public String getHomepage() {
+    return homepage;
+  }
+}
+--------------------Main--------------------------------
+package appagenda;
+
+import java.util.GregorianCalendar;
+
+public class Main {
+  static void mostraDados(ContatoBasicoobj)
+    {  System.out.println(obj.getDados());
+        if(objinstanceofContato)
+          System.out.println(((Contato)obj).getIdade());
+    }
+
+  public static void main(String[] args) {
+    Agenda a;
+    a = new Agenda();
+
+    Contato cb;
+    cb = new Contato("Teste", newGregorianCalendar(1980, 10, 28));
+    cb.setTelefone(new Telefone("32343333-234234", "Telefone residencial"));
+    cb.setTelefone(new Telefone("99123411-12432", "Telefone celular"));
+    a.inserir(cb);
+
+    ContatoComercial cc;
+    cc = new ContatoComercial("Lanchonete", "Lanches", "Lanchão");
+    cc.setTelefone(new Telefone("23432-23423", "Telefone residencial"));
+    a.inserir(cc);
+
+    a.inserir(new EContato("Exemplo", newGregorianCalendar(1975, 2, 22), "exemplo12@gmail.com", "www.exemplo12.com.br"));
+
+    ContatoBasicoobj = a.buscar("Teste");
+
+    if (obj != null)
+      mostraDados(obj);
+    else System.out.println("Contato nao encontrado!");
+  }
+}
+----------------------------Telefone------------------------------
+package appagenda;
+
+public class Telefone {
+  private String numero;
+  private String tipo;
+
+  publicTelefone(String numero, String tipo)
+    {   this.numero = numero;
+         this.tipo = tipo;
+    }
+
+  public String getTelefone() {
+    return numero + " " + tipo;
+  }
+}

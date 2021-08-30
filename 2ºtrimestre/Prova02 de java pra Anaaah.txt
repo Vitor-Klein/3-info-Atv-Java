@@ -1,0 +1,189 @@
+package prova2;
+public class fone{   private String numero;
+     private String tipo;
+     publictelefone(String numero, String tipo){   this.numero = numero;
+         this.tipo = tipo;
+    }
+    public String getfone(){   return numero+" "+tipo;
+     }
+}
+-------------------------------------
+Package prova2;
+
+import java.util.ArrayList;
+
+abstract public class contatobasico{   protected String nome;
+    Protected ArrayList<fone>fones;
+    public contatobasico({  nome="";
+       fones=new ArrayList();
+    }
+    public contatobasico(String nome{  this.nome = nome;
+        fones=new ArrayList();
+    }
+    public String getnome(){ return nome; }
+    public void set nome(String nome){ this.nome = nome;}
+    public void set fone(fonetf{  fones.add(tf);
+    }
+    public String getdados({   String aua=nome;
+         for(fone t:fones)
+        {  aua+=t.getefone();
+         }
+         return aua;
+    }
+}
+--------------------------------
+Package prova2;
+
+Import java.util.Calendar;
+Import java.util.GregorianCalendar;
+
+public class contato extends contatobasico{
+  protected Calendar data_nacimento;
+  publicontComercialontato(String nome, Calendar data_nacimento{   super(nome);
+         this.data_nacimento = data_nacimento;
+    }
+    @Override
+     public String getdados({ returnsuper.getdados()+"Nascido em "+
+        data_nacimento.get(Calendar.date)+"/"+
+        data_nacimento.get(Calendar.month) + "/"+
+        data_nacimento.get(Calendar.year) + "\nidade: ";
+    }
+    public intgetidade({   Calendar hoje=new GregorianCalendar();
+          intidade=hoje.get(Calendar.year)-data_nacimento.get(Calendar.year);
+          hoje.set(Calendar.year, data_nacimento.get(Calendar.year));
+          if(hoje.before(data_nacimento))
+            idade--;
+            return idade;
+
+    }
+}
+---------------------------
+Package prova2;
+
+public class contatocomercial extends contatobasic{
+  protected String atv;
+  protected String func;
+
+  public contatocomercial(String nome, String atv, String func{   super(nome);
+       this.atv=atv;
+       this.func=func;
+  }
+  @Override
+   public String getdados({  String s=super.getdados();
+       s+=atv+"\n"+" contato Sr(a): "+func;
+       return s;
+    }
+}
+---------------------------------------------------------
+Package prova2;
+import java.util.Calendar;
+
+public class econtato extends contato{  protected String email,Page;
+    public econtato(String nome, Calendar data_nacimento, String email, String hp)
+  {  super(nome,data_nacimento);
+        this.email=email;
+        Page=hp;
+   }
+    @Override
+    public String getdados(){
+      return super.getdados()+"email: "+email+"\nPage:"+Page+"\nIdade: ";
+    }
+    public String getemail(){
+      return email;
+    }
+    public String getPage(){
+       return Page;
+    }
+}
+------------------------------------
+Package prova2;
+
+Import java.util.ArrayList;
+
+public class agenda{   private ArrayList<contatobasico>contatos;
+    agenda()
+  {   contatos=new ArrayList();
+    }
+    public void inserir(contatocasico c)
+  {   contatos.add(c);
+    }
+    Public contatobasicobuscar(String nome)
+  {   for(int lala=0;lala<contatos.size();lala++)
+      {   contatobasico c=contatos.get(lala);
+             if(c.getnome().equalsIgnoreCase(nome))
+               return contatos.get(lala);
+        }
+        return null;
+    }
+    Public contatobasicobuscar(int sas)
+  {   if(sas>=0 &&sas<contatos.size())
+      {   returncontatos.get(sas);
+        }
+        return null;
+    }
+    Public econtatobuscaremail(String email)
+  {   for(int i=0;i<contatos.size();i++)
+      {   if(contatos.get(i) instanceofEContato)
+          {
+              econtato c=(econtato)contatos.get(i);
+              if(c.getEmail().equalsIgnoreCase(email))
+              return (econtato)contatos.get(i);
+            }
+        }
+        return null;
+    }
+    Public contato[] buscarGeral(String palavraChave)
+  {   ArrayList<ContatoBasico>todos=new ArrayList();
+         for(int i=0;i<contatos.size();i++)
+        {   contatobasico c=contatos.get(i);
+               if(c.getDados().contains(palavraChave))
+                 todos.add(c);
+           }
+           Contato[] tamanho=new Contato[todos.size()];
+
+            return (todos.toArray(tamanho));
+     }
+     Public Contato[] buscarTodos()
+  {   Contato[] tamanho=new Contato[contatos.size()];
+
+         return (contatos.toArray(tamanho));
+    }
+    Public intgetQuantidade()
+  {  returncontatos.size();
+    }
+}
+-------------------------------------
+Package prova2;
+
+Import java.util.GregorianCalendar;
+
+public class Main{   static void mostrardados(contatobasicoobj)
+  {  System.out.println(obj.getdados());
+        if(objinstanceofcontato)
+          System.out.println(((contato)obj).getidade());
+          System.out.println("Resultado");
+    }
+     public static void main(String[] args)
+    {   agenda a;
+          a=new agenda();
+
+          contato contBasico;
+           contBasico=new contato("Ana",newGregorianCalendar(2001,12,20));
+           contBasico.setTelefone(new telefone("2423423","fone residencial"));
+           contBasico.setTelefone(new telefone("56734","fone celular"));
+           a.inserir(contBasico);
+
+           contatocomercial contComercial;
+           contComercial=new contatocomercial("pizzaria");
+           contComercial.setone(new fone("4353453","fone residencial"));
+           a.inserir(contComercial);
+
+          a.inserir(new econtato("Ana Laura",newGregorianCalendar(2004,3,25),
+                "emailgenerico@gmail.com","emailgenerico@gmail.com"));
+
+          contatobasico=a.buscar("Ana"); 
+          if(objetos!=null)
+            mostradados(objetos);
+            elseSystem.out.println("contato não achado");
+         }
+}
