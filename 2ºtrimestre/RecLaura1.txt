@@ -1,0 +1,461 @@
+cliente
+
+package base;
+
+public class Cliente {
+  private String Endereço, Telefone, Nome, Ramo, Razão_Social, CNPJ, NomeFantasia, ID;
+public Cliente(int id, String nome, String nomeFatasia, String logradouro, String numero, String complemento,
+ String bairro, String cep, String cidade, String uf) {
+   super();
+ this.Endereço = Endereço;
+ this.Telefone = Telefone;
+ this.Razão_Social = Razão_Social;
+ this.Nome = Nome;
+ this.Nome = Nome;
+ this.Ramo = Ramo;
+ this.Ramo = Ramo;
+ this.CNPJ = CNPJ;
+ this.NomeFantasia = NomeFantasia;
+ this.ID = ID;
+
+}
+
+public String getEndereço() {
+ return Endereço;
+}
+
+public void setEndereço(String Endereço) {
+ this.Endereço = Endereço;
+}
+
+public String getTelefone() {
+ return Telefone;
+}
+
+public void setTelefone(String Telefone) {
+ this.Telefone = Telefone;
+}
+
+public String getNome() {
+ return Nome;
+}
+
+public void setNome(String Nome) {
+ this.Nome = Nome;
+}
+
+public String getRamo() {
+ return Ramo;
+}
+
+public void setRamo(String Ramo) {
+ this.Ramo = Ramo;
+}
+
+public String getRazão_Social() {
+ return Razão_Social;
+}
+
+public void setRazão_Social(String Razão_Social) {
+ this.Razão_Social = Razão_Social;
+}
+
+public String getCNPJ() {
+ return CNPJ;
+}
+
+public void setCNPJ(String CNPJ) {
+ this.CNPJ = CNPJ;
+}
+
+public String getNomeFantasia() {
+ return NomeFantasia;
+}
+
+public void setNomeFantasia(String NomeFantasia) {
+ this.NomeFantasia = NomeFantasia;
+}
+
+public String getID() {
+ return ID;
+}
+
+public void setID(String ID) {
+ this.ID = ID;
+}
+}
+
+estoque
+package base;
+
+public class Estoque extends Produto{
+  private String produto,estoque;
+  public Estoque(String produto, String estoque){
+    super(produto, estoque);
+    this.produto = produto;
+    this.estoque=estoque;
+  }
+
+  public String getproduto() {
+    return produto;
+   }
+   
+   public void setproduto(String produto) {
+    this.produto = produto;
+   }
+
+   public String getestoque() {
+    return estoque;
+   }
+   
+   public void setestoque(String estoque) {
+    this.estoque = estoque;
+   }
+}
+
+
+fornecedor
+package base;
+
+public class Fornecedor extends MPFormecedor {
+  private String ID_Forn,endereco,nome,CNPJ, Telefone, Razão_Social;
+  public Fornecedor(String ID_Forn,String Telefone,String Razão_Social,String nome,String CNPJ, String endereco){
+    super(ID_Forn, Telefone, endereco, Razão_Social, CNPJ);
+    this.ID_Forn = ID_Forn;
+    this.endereco=endereco;
+    this.nome=nome;
+    this.CNPJ=CNPJ;
+    this.Telefone = Telefone;
+    this.Razão_Social = Razão_Social;
+  }
+
+  public String getTelefone() {
+    return Telefone;
+   }
+   
+   public void setTelefone(String Telefone) {
+    this.Telefone = Telefone;
+   }
+
+   public String getRazão_Social() {
+    return Razão_Social;
+   }
+   
+   public void setRazão_Social(String Razão_Social) {
+    this.Razão_Social = Razão_Social;
+   }
+
+  public String getID_Forn() {
+    return ID_Forn;
+   }
+   
+   public void setID_Forn(String ID_Forn) {
+    this.ID_Forn = ID_Forn;
+   }
+
+   public String getendereco() {
+    return endereco;
+   }
+   
+   public void setendereco(String endereco) {
+    this.endereco = endereco;
+   }
+
+   public String getnome() {
+    return nome;
+   }
+   
+   public void setnome(String nome) {
+    this.nome = nome;
+   }
+
+   public String getCNPJ() {
+    return CNPJ;
+   }
+   
+   public void setCNPJ(String CNPJ) {
+    this.CNPJ = CNPJ;
+   }
+
+}
+
+
+
+Itens
+package base;
+
+public class Itens extends Pedido{
+  private String produto,pedido;
+  public Itens(String produto, String pedido ,String ID_pedido){
+    super(produto, pedido, ID_pedido);
+    this.produto = produto;
+    this.pedido=pedido;
+  }
+
+  public String getproduto() {
+    return produto;
+   }
+   
+   public void setproduto(String produto) {
+    this.produto = produto;
+   }
+
+   public String getpedido() {
+    return pedido;
+   }
+   
+   public void setpedido(String pedido) {
+    this.pedido = pedido;
+   }
+}
+
+
+Materia prima
+package base;
+
+public class MP{
+  private String ID_Mp,nome,descricao,quant;
+  public MP(String ID_Mp, String nome ,String descricao,String quant){
+    super();
+    this.ID_Mp = ID_Mp;
+    this.nome=nome;
+    this.descricao=descricao;
+    this.quant=quant;
+  }
+
+  public String getID_Mp() {
+    return ID_Mp;
+   }
+   
+   public void setID_Mp(String ID_Mp) {
+    this.ID_Mp = ID_Mp;
+   }
+
+   public String getnome() {
+    return nome;
+   }
+   
+   public void setnome(String nome) {
+    this.nome = nome;
+   }
+
+   public String getdescricao() {
+    return descricao;
+   }
+   
+   public void setdescricao(String descricao) {
+    this.descricao = descricao;
+   }
+
+   public String getquant() {
+    return quant;
+   }
+   
+   public void setquant(String quant) {
+    this.quant = quant;
+   }
+}
+
+
+MP fornecedor
+package base;
+
+public class MPFormecedor {
+  private String ID_Forn,ID_MP;
+  public MPFormecedor(String ID_Forn, String ID_MP){
+    super();
+    this.ID_Forn = ID_Forn;
+    this.ID_MP=ID_MP;
+  }
+
+  public String getID_Forn() {
+    return ID_Forn;
+   }
+   
+   public void setID_Forn(String ID_Forn) {
+    this.ID_Forn = ID_Forn;
+   }
+
+   public String getID_MP() {
+    return ID_MP;
+   }
+   
+   public void setID_MP(String ID_MP) {
+    this.ID_MP = ID_MP;
+   }
+}
+
+
+
+
+MP produto
+package base;
+
+public class MPProduto extends Produto{
+  private String produto,MateriaPrima;
+  public MPProduto(String produto, String MateriaPrima){
+    super(produto, MateriaPrima);
+    this.produto = produto;
+    this.MateriaPrima=MateriaPrima;
+  }
+
+  public String getproduto() {
+    return produto;
+   }
+   
+   public void setproduto(String produto) {
+    this.produto = produto;
+   }
+
+   public String getMateriaPrima() {
+    return MateriaPrima;
+   }
+   
+   public void setMateriaPrima(String MateriaPrima) {
+    this.MateriaPrima = MateriaPrima;
+   }
+}
+
+
+Pedido
+package base;
+
+public class MPProduto extends Produto{
+  private String produto,MateriaPrima;
+  public MPProduto(String produto, String MateriaPrima){
+    super(produto, MateriaPrima);
+    this.produto = produto;
+    this.MateriaPrima=MateriaPrima;
+  }
+
+  public String getproduto() {
+    return produto;
+   }
+   
+   public void setproduto(String produto) {
+    this.produto = produto;
+   }
+
+   public String getMateriaPrima() {
+    return MateriaPrima;
+   }
+   
+   public void setMateriaPrima(String MateriaPrima) {
+    this.MateriaPrima = MateriaPrima;
+   }
+}
+
+
+produção
+package base;
+
+public class Producao{
+  private String Lote,Produto,Q_produzida,Custo, data_entrega;
+  public Producao(String Lote, String Produto ,String Q_produzida,String Custo, String data_entrega){
+    super();
+    this.Lote = Lote;
+    this.Produto=Produto;
+    this.Q_produzida=Q_produzida;
+    this.Custo=Custo;
+    this.data_entrega=data_entrega;
+  }
+
+  public String getLote() {
+    return Lote;
+   }
+   
+   public void setLote(String Lote) {
+    this.Lote = Lote;
+   }
+
+   public String getProduto() {
+    return Produto;
+   }
+   
+   public void setProduto(String Produto) {
+    this.Produto = Produto;
+   }
+
+   public String getQ_produzida() {
+    return Q_produzida;
+   }
+   
+   public void setQ_produzida(String Q_produzida) {
+    this.Q_produzida = Q_produzida;
+   }
+
+   public String getCusto() {
+    return Custo;
+   }
+   
+   public void setCusto(String Custo) {
+    this.Custo = Custo;
+   }
+
+   public String getdata_entrega() {
+    return data_entrega;
+   }
+   
+   public void setdata_entrega(String data_entrega) {
+    this.data_entrega = data_entrega;
+   }
+
+}
+
+
+produto
+package base;
+
+public class Produto {
+  private String ID_produto,nome,tamanho,cor,valor;
+  public Produto(String ID_produto, String nome ,String tamanho, String cor, String valor){
+    super(ID_produto,nome,tamanho,cor,valor);
+    this.ID_produto = ID_produto;
+    this.nome=nome;
+    this.tamanho=tamanho;
+    this.cor=cor;
+    this.valor=valor;
+  }
+
+  public String getID_produto() {
+    return ID_produto;
+   }
+   
+   public void setID_produto(String ID_produto) {
+    this.ID_produto = ID_produto;
+   }
+
+   public String getnome() {
+    return nome;
+   }
+   
+   public void setnome(String nome) {
+    this.nome = nome;
+   }
+   public String gettamanho() {
+    return tamanho;
+   }
+   
+   public void settamanho(String tamanho) {
+    this.tamanho = tamanho;
+   }
+
+   public String getcor() {
+    return cor;
+   }
+   
+   public void setcor(String cor) {
+    this.cor = cor;
+   }
+   public String getvalor() {
+    return valor;
+   }
+   
+   public void setvalor(String valor) {
+    this.valor = valor;
+   }
+}
+
+
+
+
