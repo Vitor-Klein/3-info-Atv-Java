@@ -5,6 +5,7 @@ public class Livro {
   private String titulo;
 
   public Livro(String autor, String titulo) {
+    super();
     this.autor = autor;
     this.titulo = titulo;
   }
