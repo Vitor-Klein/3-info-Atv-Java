@@ -30,6 +30,11 @@ public class Livro implements Comparavel{
 
       @Override
       public int Comparar(Object t){
-        return 0;
+        int comparacao = 0;
+
+        if(t instanceof Livro){
+          Livro a = (Livro) t;
+          comparacao = this.getAutor().compareTo(a.getAutor());
+        }
       }
 }
