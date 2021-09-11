@@ -1,6 +1,6 @@
 package base;
 
-public class Livro {
+public class Livro implements Comparavel{
   private String autor;
   private String titulo;
 
@@ -26,5 +26,10 @@ public class Livro {
       
       public void setTitulo(String titulo) {
         this.titulo = titulo;
+      }
+
+      @Override
+      public int Comparar(Object t){
+        return 0;
       }
 }
