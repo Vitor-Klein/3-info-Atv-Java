@@ -35,11 +35,11 @@ public class Livro implements Comparavel{
         if(t instanceof Livro){
           Livro a = (Livro) t;
           comparacao = this.getAutor().compareTo(a.getAutor());
-        }
 
-        if (comparacao == 0) {
-          comparacao = this.getTitulo().compareTo(a.getTitulo());
+          if (comparacao == 0) {
+            comparacao = this.getTitulo().compareTo(a.getTitulo());
+          }
         }
-        return 0;
+        return comparacao;
       }
 }
