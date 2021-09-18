@@ -42,4 +42,16 @@ public class Livro implements Comparavel{
         }
         return comparacao;
       }
+
+      public void ordenar(Comparavel[] objeto){
+        for(int i = 0; i < objeto.length; i++){
+          for(int j = 0; j < objeto.length; j++){
+            if(objeto[i].Comparar(objeto[j]) > 0){
+              Comparavel aux = objeto[i];
+              objeto[i] = objeto[j];
+              objeto[j] = aux;
+            }
+          }
+        }
+      }
 }
