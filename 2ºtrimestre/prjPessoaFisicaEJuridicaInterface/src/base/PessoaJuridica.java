@@ -4,11 +4,16 @@ public class PessoaJuridica extends Pessoa {
   private String IE;
   private String cnpj;
 
+
   public PessoaJuridica(String nome, double altura, int idade, 
-  String endereco, String telefone, String CPF){
+  String endereco, String telefone, String IE, String cnpj){
     super(nome, altura, idade, endereco, telefone);
     this.IE = IE;     
     this.cnpj = cnpj;   
+  }
+  
+  public PessoaJuridica(){
+    super();
   }
 
   public String getIE() {
@@ -27,5 +32,11 @@ public class PessoaJuridica extends Pessoa {
     this.cnpj = cnpj;
   }
 
-  
+  public void imprime(){
+    System.out.println(
+      "\nNome: "+ this.getNome() + 
+      "\n Telefone: " + this.getTelefone() +
+      "\n cnpj " + this.getCnpj()                   
+    );
+  }
 }

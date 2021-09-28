@@ -7,7 +7,10 @@ public class Pessoa {
   private double altura;
   private int idade;
   private String endereco, telefone;
-  
+
+  public Pessoa(){
+    super();
+  }
   
   public Pessoa(String nome, double altura, int idade, String endereco, String telefone) {
   this.nome = nome;
