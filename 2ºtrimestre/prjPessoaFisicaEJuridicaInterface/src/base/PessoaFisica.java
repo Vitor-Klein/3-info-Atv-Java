@@ -1,4 +1,4 @@
-package bin;
+package base;
 
 public class PessoaFisica extends Pessoa {
 
