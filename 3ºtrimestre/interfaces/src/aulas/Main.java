@@ -2,7 +2,7 @@ package aulas;
 public class Main {
   public static void main(String[] args) {
     CanetaEsferografica ce = new CanetaEsferografica();
-    Lapis la = new Lagis();
+    Lapis la = new Lapis();
     Giz gz = new Giz();
 
     ce.setCor("Azul");
